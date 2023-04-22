@@ -26,7 +26,7 @@ jobs:
     username: ${{secrets.MAIL_USERNAME}}
     password: ${{secrets.MAIL_PASSWORD}}
     subject: Test mail from GitHub
-    to: jason1.lin@intel.com
+    to: Gua Guo <gua.guo@intel.com>
     from: Gua Guo <guajen0710@gmail.com>
     body: Build job of ${{github.repository}} completed successfully!
     ignore_cert: true
