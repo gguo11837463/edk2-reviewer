@@ -1,10 +1,9 @@
 name: 'Auto Send the mail'
-
 on:
-  push:
-  pull_request:
+  pull_request_target:
     types: [opened, synchronize, reopened, ready_for_review]
-    
+    branches:
+      - 'master'    
 jobs:
   automail:
     name: Auto-Mail
