@@ -5,28 +5,22 @@ on:
     branches:
       - 'master'    
 jobs:
-  automail:
-    name: Auto-Mail
-    strategy:
-      fail-fast: false
-       matrix:
-         os: [windows-latest]
-         python-version: ['3.10']
-         
-    runs-on : ${{ matrix.os }}
-    
+  send_mail:         
+    runs-on : windows-latest
     steps:
+      - name: Checkout Pull Request Target
+        uses: actions/checkout@v2
       - name: Send mail
-  uses: dawidd6/action-send-mail@v3
-  with:
-    server_address: smtp.gmail.com
-    server_port: 465
-    secure: true
-    username: ${{secrets.MAIL_USERNAME}}
-    password: ${{secrets.MAIL_PASSWORD}}
-    subject: Test mail from GitHub
-    to: Gua Guo <gua.guo@intel.com>
-    from: Gua Guo <guajen0710@gmail.com>
-    body: Build job of ${{github.repository}} completed successfully!
-    ignore_cert: true
-    priority: normal
+        uses: dawidd6/action-send-mail@v3
+        with:
+          erver_address: smtp.gmail.com
+          server_port: 465
+          secure: true
+          username: ${{secrets.MAIL_USERNAME}}
+          password: ${{secrets.MAIL_PASSWORD}}
+          subject: Test mail from GitHub
+          to: Gua Guo <gua.guo@intel.com>
+          from: Gua Guo <guajen0710@gmail.com>
+          body: Build job of ${{github.repository}} completed successfully!
+          ignore_cert: true
+          priority: normal
