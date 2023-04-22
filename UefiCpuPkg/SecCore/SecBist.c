@@ -1,6 +1,6 @@
 /** @file
   Get SEC platform information(2) PPI and reinstall it.
-
+aa
   Copyright (c) 2006 - 2016, Intel Corporation. All rights reserved.<BR>
   SPDX-License-Identifier: BSD-2-Clause-Patent
 
