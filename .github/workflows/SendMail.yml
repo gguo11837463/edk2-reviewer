@@ -20,7 +20,7 @@ jobs:
           password: ${{secrets.MAIL_PASSWORD}}
           subject: Test mail from GitHub
           to: Gua Guo <gua.guo@intel.com>
-          from: Gua Guo <guajen0710@gmail.com>
+          from: Gua-BOT <gua-bot@gua.idv>
           body: Build job of ${{github.repository}} completed successfully!
           ignore_cert: true
           priority: normal
